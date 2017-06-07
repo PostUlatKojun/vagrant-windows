@@ -6,9 +6,13 @@ Vagrant.configure("2") do |config|
   config.ssh.insert_key = false
   config.vm.guest = :windows
 
+  # ssh access with publickey or password 
   # config.ssh.username = "IEUser"
+
+  # ssh access with password
   # config.ssh.password = "Passw0rd!"
 
+  # winrm access
   config.vm.communicator = "winrm"
   config.winrm.username = "IEUser"
   config.winrm.password = "Passw0rd!"
@@ -37,6 +41,11 @@ Vagrant.configure("2") do |config|
   # config.vm.define :windows_vista_sp2_x86 do |t|
   # end
 
+  # provision with winrm powershell
   # config.vm.provision "shell", path: 'provisions/provision_install_soft.ps1'
-  
+
+  # provision with ssh shell
+  # config.vm.provision "shell", privileged: false, path: 'provisions/provision_install_soft.sh'
+
+
 end
